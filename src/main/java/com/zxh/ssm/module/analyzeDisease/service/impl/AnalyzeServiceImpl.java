@@ -1,43 +1,26 @@
-package com.zxh.ssm.module.user.mapper;
+package com.zxh.ssm.module.analyzeDisease.service.impl;
 
 import com.zxh.ssm.module.analyzeDisease.mapper.AnalyzeMapper;
 import com.zxh.ssm.module.analyzeDisease.pojo.AgeGroupAnalyzeRe;
 import com.zxh.ssm.module.analyzeDisease.pojo.AnalyzeVo;
 import com.zxh.ssm.module.analyzeDisease.pojo.CareerAnalyzeRe;
 import com.zxh.ssm.module.analyzeDisease.pojo.SexAnalyzeRe;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import com.zxh.ssm.module.analyzeDisease.service.AnalyzeService;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-
 import java.util.*;
 
 /**
  * Created by 郑晓辉 on 2016/10/3.
  */
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath*:spring/applicationContext*.xml"})
-public class AnalyzeMapperTest {
-
+@Service
+public class AnalyzeServiceImpl implements AnalyzeService {
     @Resource
     private AnalyzeMapper analyzeMapper;
 
-    @Test
-    public void selectDisease() throws Exception {
-        for (String s : analyzeMapper.selectDisease()
-                ) {
-            System.out.println(s);
-        }
-    }
-
-    @Test
-    public void analyzeByCareer() throws Exception {
-        AnalyzeVo analyzeVo = new AnalyzeVo();
-        analyzeVo.setBeginYear(2005);
-//        analyzeVo.setEndYear(2011);
-        analyzeVo.setProvince("云南");
+    @Override
+    public Map<String, List<CareerAnalyzeRe>> analyzeByCareer(AnalyzeVo analyzeVo) throws Exception {
         List<CareerAnalyzeRe> careerAnalyzeReList = null;
         Map<String, List<CareerAnalyzeRe>> careerResultMap = new HashMap<>();
         //此处已经去掉“不详”的职业类别数据
@@ -47,16 +30,11 @@ public class AnalyzeMapperTest {
             careerAnalyzeReList = analyzeMapper.analyzeByCareer(analyzeVo);
             careerResultMap.put(s, careerAnalyzeReList);
         }
-        System.out.println(careerResultMap.get("恶性疟"));
-        System.out.println("===Over===");
+        return careerResultMap;
     }
 
-    @Test
-    public void analyzeBySex() throws Exception {
-        AnalyzeVo analyzeVo = new AnalyzeVo();
-        analyzeVo.setBeginYear(2005);
-//        analyzeVo.setEndYear(2011);
-        analyzeVo.setProvince("福建");
+    @Override
+    public Map<String, List<SexAnalyzeRe>> analyzeBySex(AnalyzeVo analyzeVo) throws Exception {
         List<SexAnalyzeRe> sexAnalyzeReList = null;
         Map<String, List<SexAnalyzeRe>> sexResultMap = new HashMap<>();
         //此处已经去掉“不详”的职业类别数据
@@ -66,17 +44,11 @@ public class AnalyzeMapperTest {
             sexAnalyzeReList = analyzeMapper.analyzeBySex(analyzeVo);
             sexResultMap.put(s,sexAnalyzeReList);
         }
-        System.out.println(sexResultMap.get("恶性疟"));
-        System.out.println("===Over===");
+        return sexResultMap;
     }
 
-    @Test
-    public void analyzeByAgeGroup() throws Exception {
-        AnalyzeVo analyzeVo = new AnalyzeVo();
-        analyzeVo.setProvince("云南");
-        analyzeVo.setBeginYear(2005);
-        analyzeVo.setEndYear(2011);
-        analyzeVo.setDiseaseName("恶性疟");
+    @Override
+    public AgeGroupAnalyzeRe analyzeByAgeGroup(AnalyzeVo analyzeVo) throws Exception {
         List<Integer> ageGroupPop = new ArrayList<Integer>();
         for (int i = 0; i < 10; i++) {
             analyzeVo.setVirtualAgeDownLimit(i * 10);
@@ -93,7 +65,7 @@ public class AnalyzeMapperTest {
         ageGroupAnalyzeRe.setAgeGroup70_79Pop(ageGroupPop.get(7));
         ageGroupAnalyzeRe.setAgeGroup80_89Pop(ageGroupPop.get(8));
         ageGroupAnalyzeRe.setAgeGroup90_99Pop(ageGroupPop.get(9));
-        System.out.println(ageGroupAnalyzeRe.getAgeGroup0_9Pop() + " " + ageGroupAnalyzeRe.getAgeGroup10_19Pop());
+        return ageGroupAnalyzeRe;
     }
 
 }

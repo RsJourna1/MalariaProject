@@ -1,7 +1,8 @@
 package com.zxh.ssm.module.user.mapper;
 
-import com.zxh.ssm.module.user.pojo.DynamicOutbreakRe;
-import com.zxh.ssm.module.user.pojo.DynamicOutbreakVo;
+import com.zxh.ssm.module.analyzeDisease.mapper.DynamicOutbreakMapper;
+import com.zxh.ssm.module.analyzeDisease.pojo.DynamicOutbreakRe;
+import com.zxh.ssm.module.analyzeDisease.pojo.DynamicOutbreakVo;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -10,8 +11,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import javax.annotation.Resource;
 
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by 郑晓辉 on 2016/10/1.

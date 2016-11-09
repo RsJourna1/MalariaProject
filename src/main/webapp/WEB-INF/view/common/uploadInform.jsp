@@ -1,5 +1,5 @@
 <%@ page import="java.util.List" %>
-<%@ page import="com.zxh.ssm.module.user.pojo.UploadInform" %>
+<%@ page import="com.zxh.ssm.module.upload.pojo.UploadInform" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
