@@ -10,10 +10,10 @@
 }
 div .myCol1, .myCol2, .myCol3{
     border: 1px solid #6c6d6f;
-    border-radius: 5px;
-    height: 600px;
-    width: 27%;
-    margin:15px;
+    border-radius: 10px;
+    height: 400px;
+    width: 32%;
+    margin:8px;
     float: left;
     transition-duration: 500ms;
     background-color: rgba(253, 253, 253, 0.13);
