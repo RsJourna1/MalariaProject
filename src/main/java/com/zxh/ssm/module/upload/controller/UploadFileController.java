@@ -49,6 +49,11 @@ public class UploadFileController {
 
     private List<UploadInform> result;
 
+    @RequestMapping("/uploadView")
+    public String uploadView()throws Exception{
+        return "common/dataUpload";
+    }
+
     @RequestMapping("/displayUploadInform")
     public ModelAndView displayUploadInform() throws Exception {
         ModelAndView modelAndView = new ModelAndView();

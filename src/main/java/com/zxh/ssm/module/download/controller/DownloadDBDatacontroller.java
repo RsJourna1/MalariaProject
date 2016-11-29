@@ -32,6 +32,11 @@ public class DownloadDBDataController {
     @Resource
     private DownloadDBDataService downloadDBDataService;
 
+    @RequestMapping(value = "downloadView")
+    public String downloadView()throws Exception{
+        return "common/dataDownload";
+    }
+
     /**
      * 根据用户选择的数据类别，获取展示的字段名
      * 同时转到相应的选择页面

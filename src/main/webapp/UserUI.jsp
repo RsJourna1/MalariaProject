@@ -107,14 +107,14 @@
                     </a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="/hotMap.jsp" class="J_menuItem">热力图</a>
-                            <a href="/hotMap.jsp" class="J_menuItem">动态迁移</a>
+                            <a href="hotMap.jsp" class="J_menuItem">热力图</a>
+                            <a href="hotMap.jsp" class="J_menuItem">动态迁移</a>
                         </li>
                     </ul>
                 </li>
 
                 <li>
-                    <a class="J_menuItem" href="charts.jsp">
+                    <a class="J_menuItem" href="WEB-INF/view/common/charts.jsp">
                         <i class="fa fa fa-bar-chart"></i>
                         <span class="nav-label">数据分析</span>
                     </a>
@@ -128,18 +128,18 @@
                     </a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="/unDone.jsp" class="J_menuItem">1</a>
-                            <a href="/unDone.jsp" class="J_menuItem">2</a>
-                            <a href="/unDone.jsp" class="J_menuItem">3</a>
-                            <a href="/unDone.jsp" class="J_menuItem">4</a>
-                            <a href="/unDone.jsp" class="J_menuItem">5</a>
-                            <a href="/unDone.jsp" class="J_menuItem">6</a>
+                            <a href="/WEB-INF/view/common/unDone.jsp" class="J_menuItem">1</a>
+                            <a href="/WEB-INF/view/common/unDone.jsp" class="J_menuItem">2</a>
+                            <a href="/WEB-INF/view/common/unDone.jsp" class="J_menuItem">3</a>
+                            <a href="/WEB-INF/view/common/unDone.jsp" class="J_menuItem">4</a>
+                            <a href="/WEB-INF/view/common/unDone.jsp" class="J_menuItem">5</a>
+                            <a href="/WEB-INF/view/common/unDone.jsp" class="J_menuItem">6</a>
                         </li>
                     </ul>
                 </li>
 
                 <li>
-                    <a class="J_menuItem" href="/unDone.jsp">
+                    <a class="J_menuItem" href="/WEB-INF/view/common/unDone.jsp">
                         <i class="fa fa fa-calculator"></i>
                         <span class="nav-label">执行计算</span>
                     </a>
@@ -147,7 +147,7 @@
 
 
                 <li>
-                    <a class="J_menuItem" href="/unDone.jsp">
+                    <a class="J_menuItem" href="/WEB-INF/view/common/unDone.jsp">
                         <i class="fa fa fa-database"></i>
                         <span class="nav-label">相关数据</span>
                     </a>

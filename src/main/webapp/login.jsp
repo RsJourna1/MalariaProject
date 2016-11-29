@@ -56,7 +56,7 @@
                 <input type="password" class="form-control pword m-b" placeholder="密码" />
                 <strong><a href="">忘记密码&nbsp;&nbsp;&nbsp;</a></strong>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>还没有账号？ <a href="register.jsp">立即注册&raquo;</a></strong>
-                <a href="AdminUI.jsp"><button type="button" class="btn btn-success btn-block">登录</button></a>
+                <a href="/user/login"><button type="button" class="btn btn-success btn-block">登录</button></a>
             </form>
         </div>
     </div>

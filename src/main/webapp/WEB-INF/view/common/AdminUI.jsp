@@ -93,14 +93,14 @@
             <ul class="nav" id="side-menu">
 
                 <li>
-                    <a class="J_menuItem" href="/dataUpload.jsp">
+                    <a class="J_menuItem" href="/UploadFile/uploadView">
                         <i class="fa fa-cloud-upload"></i>
                         <span class="nav-label">数据导入</span>
                     </a>
                 </li>
 
                 <li>
-                    <a class="J_menuItem" href="/dataDownload.jsp">
+                    <a class="J_menuItem" href="/DownloadDBData/downloadView">
                         <i class="fa fa-download"></i>
                         <span class="nav-label">数据下载</span>
                     </a>
@@ -114,14 +114,14 @@
                     </a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="/hotMap.jsp" class="J_menuItem">热力图</a>
-                            <a href="/hotMap.jsp" class="J_menuItem">动态迁移</a>
+                            <a href="/UndonePage/hotMapDemo" class="J_menuItem">热力图</a>
+                            <a href="/UndonePage/hotMapDemo" class="J_menuItem">动态迁移</a>
                         </li>
                     </ul>
                 </li>
 
                 <li>
-                    <a class="J_menuItem" href="/charts.jsp">
+                    <a class="J_menuItem" href="/AnalyzeController/analyzeView">
                         <i class="fa fa fa-bar-chart"></i>
                         <span class="nav-label">数据分析</span>
                     </a>
@@ -135,25 +135,25 @@
                     </a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="/unDone.jsp" class="J_menuItem">1</a>
-                            <a href="/unDone.jsp" class="J_menuItem">2</a>
-                            <a href="/unDone.jsp" class="J_menuItem">3</a>
-                            <a href="/unDone.jsp" class="J_menuItem">4</a>
-                            <a href="/unDone.jsp" class="J_menuItem">5</a>
-                            <a href="/unDone.jsp" class="J_menuItem">6</a>
+                            <a href="/UndonePage/developing" class="J_menuItem">1</a>
+                            <a href="/UndonePage/developing" class="J_menuItem">2</a>
+                            <a href="/UndonePage/developing" class="J_menuItem">3</a>
+                            <a href="/UndonePage/developing" class="J_menuItem">4</a>
+                            <a href="/UndonePage/developing" class="J_menuItem">5</a>
+                            <a href="/UndonePage/developing" class="J_menuItem">6</a>
                         </li>
                     </ul>
                 </li>
 
                 <li>
-                    <a class="J_menuItem" href="/unDone.jsp">
+                    <a class="J_menuItem" href="/UndonePage/developing">
                         <i class="fa fa fa-calculator"></i>
                         <span class="nav-label">执行计算</span>
                     </a>
                 </li>
 
                 <li>
-                    <a class="J_menuItem" href="/unDone.jsp">
+                    <a class="J_menuItem" href="/UndonePage/developing">
                         <i class="fa fa fa-database"></i>
                         <span class="nav-label">相关数据</span>
                     </a>
@@ -191,10 +191,10 @@
                     </li>
                 </ul>
             </div>
-            <a href="UserUI.jsp" class="roll-nav roll-right J_tabExit"><i class="fa fa fa-sign-out"></i> 退出</a>
+            <a href="http://localhost:8080/UserUI.jsp" class="roll-nav roll-right J_tabExit"><i class="fa fa fa-sign-out"></i> 退出</a>
         </div>
         <div class="row J_mainContent" id="content-main">
-            <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="first-page.jsp" frameborder="0"
+            <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="../../../first-page.jsp" frameborder="0"
                     data-id="first-page.jsp" seamless></iframe>
         </div>
         <!--<div class="footer">-->
@@ -213,7 +213,7 @@
 
 <!-- 自定义js -->
 <script src="${webRoot}/js/hplus.js"></script>
-<script type="text/javascript" src="${webRoot}/js/contabs.js"></script>
+<script src="${webRoot}/js/contabs.js" type="text/javascript"></script>
 
 <!-- 第三方插件 -->
 <script src="${webRoot}/js/pace.min.js"></script>

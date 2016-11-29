@@ -24,6 +24,11 @@ public class AnalyzeController {
     @Resource
     private AnalyzeService analyzeService;
 
+    @RequestMapping("analyzeView")
+    public String analyzeView()throws  Exception{
+        return "common/charts";
+    }
+
     @RequestMapping("/careerModule")
     public
     @ResponseBody
