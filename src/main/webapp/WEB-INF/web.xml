@@ -6,7 +6,8 @@
     <display-name>SSM Web Application</display-name>
 
     <welcome-file-list>
-        <welcome-file>UserUI.jsp</welcome-file>
+        <welcome-file>test.jsp</welcome-file>
+        <!--<welcome-file>UserUI.jsp</welcome-file>-->
         <!--<welcome-file>AdminUI.jsp</welcome-file>-->
     </welcome-file-list>
 

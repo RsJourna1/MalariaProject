@@ -18,7 +18,7 @@
     <!--[if lt IE 9]>
     <meta http-equiv="refresh" content="0;ie.html"/>
     <![endif]-->
-
+    <link rel="shortcut icon" href="${webRoot}/images/malaria.ico"/>
     <link href="${webRoot}/css/navStyle.css" rel="stylesheet" type="text/css" />
     <link href="${webRoot}/css/bootstrap.min.css" rel="stylesheet">
     <link href="${webRoot}/css/font-awesome.min.css" rel="stylesheet">

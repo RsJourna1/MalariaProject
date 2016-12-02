@@ -6,6 +6,46 @@
         SELECT DISTINCT(diseaseName) FROM patient_cases_information
 	WHERE diseaseName NOT LIKE '%未分型%'
     </select>
+
+    <resultMap id="analyzeBySexMap" type="com.zxh.ssm.module.analyzeDisease.pojo.SexAnalyzeRe">
+        <result column="dataYear" property="year"/>
+        <result column="disease" property="disease"/>
+        <result column="sex" property="sex"/>
+        <result column="num" property="patientNum"/>
+    </resultMap>
+
+    <select id="analyzeBySex" parameterType="String"
+            resultMap="analyzeBySexMap">
+        SELECT p.`year` AS dataYear,pci.diseaseName AS disease,p.sex AS sex,COUNT(p.sex) AS num FROM patient_information p
+        JOIN patient_cases_information pci
+        ON (p.`year` = pci.`year` AND p.cardID = pci.cardID)
+        <where>
+            AND pci.diseaseName NOT LIKE '疟疾（未分型）'
+            <if test="'中国'!=_parameter and ''!=_parameter">
+                AND p.address LIKE '%${_parameter}%'
+            </if>
+        </where>
+        GROUP BY p.sex , pci.diseaseName , pci.`year`
+        ORDER BY pci.`year`,pci.diseaseName,p.sex;
+    </select>
+
+    <!--SELECT pi.sex AS sex,COUNT(pi.sex) AS patientNum-->
+    <!--FROM patient_information pi ,patient_cases_information pci-->
+    <!--<where>-->
+    <!--AND pi.cardID = pci.cardID-->
+    <!--AND pi.`year` = pci.`year`-->
+    <!--<if test="0!=beginYear and 0!=endYear">-->
+    <!--AND (pi.`year` BETWEEN #{beginYear} AND #{endYear})-->
+    <!--</if>-->
+    <!--<if test="province != null and province != ''">-->
+    <!--AND ( pi.address LIKE '${province}%')-->
+    <!--</if>-->
+    <!--<if test="null!=diseaseName and ''!=diseaseName">-->
+    <!--AND pci.diseaseName LIKE '${diseaseName}'-->
+    <!--</if>-->
+    <!--</where>-->
+    <!--GROUP BY sex;-->
+
     <resultMap id="analyzeByCareerMap" type="com.zxh.ssm.module.analyzeDisease.pojo.CareerAnalyzeRe">
         <result column="careerCategory" property="careerCategory"/>
         <result column="patientNum" property="patientNum"/>
@@ -30,33 +70,6 @@
         </where>
         GROUP BY pi.career,pci.diseaseName
     </select>
-
-
-    <resultMap id="analyzeBySexMap" type="com.zxh.ssm.module.analyzeDisease.pojo.SexAnalyzeRe">
-        <result column="sex" property="sex"/>
-        <result column="patientNum" property="patientNum"/>
-    </resultMap>
-
-    <select id="analyzeBySex" parameterType="com.zxh.ssm.module.analyzeDisease.pojo.AnalyzeVo"
-            resultMap="analyzeBySexMap">
-        SELECT pi.sex AS sex,COUNT(pi.sex) AS patientNum
-        FROM patient_information pi ,patient_cases_information pci
-        <where>
-            AND pi.cardID = pci.cardID
-            AND pi.`year` = pci.`year`
-            <if test="0!=beginYear and 0!=endYear">
-                AND (pi.`year` BETWEEN #{beginYear} AND #{endYear})
-            </if>
-            <if test="province != null and province != ''">
-                AND ( pi.address LIKE '${province}%')
-            </if>
-            <if test="null!=diseaseName and ''!=diseaseName">
-                AND pci.diseaseName LIKE '${diseaseName}'
-            </if>
-        </where>
-        GROUP BY sex;
-    </select>
-
 
     <select id="analyzeByAgeGroup" parameterType="com.zxh.ssm.module.analyzeDisease.pojo.AnalyzeVo"
             resultType="int">

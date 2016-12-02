@@ -11,7 +11,7 @@
     <!--[if lt IE 9]>
     <meta http-equiv="refresh" content="0;ie.html"/>
     <![endif]-->
-
+    <link rel="shortcut icon" href="${webRoot}/images/malaria.ico"/>
     <link href="${webRoot}/css/navStyle.css" rel="stylesheet" type="text/css" />
     <link href="${webRoot}/css/bootstrap.min.css" rel="stylesheet">
     <link href="${webRoot}/css/font-awesome.min.css" rel="stylesheet">
@@ -121,7 +121,7 @@
                 </li>
 
                 <li>
-                    <a class="J_menuItem" href="/AnalyzeController/analyzeView">
+                    <a class="J_menuItem" href="/AnalyzeByCharts/analyzeView">
                         <i class="fa fa fa-bar-chart"></i>
                         <span class="nav-label">数据分析</span>
                     </a>

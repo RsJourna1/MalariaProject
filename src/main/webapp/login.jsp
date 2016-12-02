@@ -15,6 +15,7 @@
     <title>登录</title>
     <meta name="keywords" content="后台">
     <meta name="description" content="后台">
+    <link rel="shortcut icon" href="${webRoot}/images/malaria.ico"/>
     <link href="${webRoot}/css/bootstrap.min.css" rel="stylesheet">
     <link href="${webRoot}/css/font-awesome.min.css" rel="stylesheet">
     <link href="${webRoot}/css/animate.css" rel="stylesheet">

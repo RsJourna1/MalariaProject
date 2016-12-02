@@ -12,11 +12,11 @@ import java.util.Set;
  */
 public interface AnalyzeMapper {
 
+    List<SexAnalyzeRe> analyzeBySex(String dataSource)throws Exception;
+
     Set<String> selectDisease()throws Exception;
 
     List<CareerAnalyzeRe> analyzeByCareer(AnalyzeVo analyzeVo)throws Exception;
-
-    List<SexAnalyzeRe> analyzeBySex(AnalyzeVo analyzeVo)throws Exception;
 
     int analyzeByAgeGroup(AnalyzeVo analyzeVo)throws Exception;
 }
