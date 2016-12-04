@@ -51,6 +51,7 @@
         <hr>
     </div>
     <div class="partDivide">
+        <a id="returnTerm" href="/DownloadDBData/downloadView" class="btn btn-link pull-left" type="submit">返回选择</a>
         <button id="submitTerm" class="btn btn-primary pull-right" type="submit">开始下载</button>
     </div>
     <div class="partDivide">

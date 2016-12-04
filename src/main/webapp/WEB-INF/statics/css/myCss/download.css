@@ -42,8 +42,12 @@
 }
 
 #submitTerm {
-    float: right;
+    /*float: right;*/
     right: 20px;
+}
+
+#returnTerm{
+    left: 20px;
 }
 
 .describe {
