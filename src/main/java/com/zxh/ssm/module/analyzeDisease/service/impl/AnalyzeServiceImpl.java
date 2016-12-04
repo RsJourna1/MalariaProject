@@ -22,52 +22,76 @@ public class AnalyzeServiceImpl implements AnalyzeService {
         if (0 == sexAnalyzeReList.size()) {
             return null;
         }
-        Set<Integer> year1 = new HashSet<>();
-        List<String> sex1 = new ArrayList<>();
-        List<Integer> nums1 = new ArrayList<>();
-        Set<Integer> year2 = new HashSet<>();
-        List<String> sex2 = new ArrayList<>();
-        List<Integer> nums2 = new ArrayList<>();
-        for (int index = 0; index < sexAnalyzeReList.size(); index++) {
-            SexAnalyzeRe current = sexAnalyzeReList.get(index);
+        List<SexAnalyzeRe> diseaseC1 = new ArrayList<>();
+        List<String> yearListC1 = new ArrayList<>();
+        List<SexAnalyzeRe> diseaseC2 = new ArrayList<>();
+        List<String> yearListC2 = new ArrayList<>();
+        for (int count = 0; count < sexAnalyzeReList.size(); count++) {
+            SexAnalyzeRe current = sexAnalyzeReList.get(count);
             if (current.getDisease().equals("恶性疟")) {
-                year1.add(current.getYear());
-                if (!sex1.contains(current.getSex())){
-                    sex1.add(current.getSex());
+                diseaseC1.add(current);
+                if (!yearListC1.contains(Integer.toString(current.getYear()))) {
+                    yearListC1.add(Integer.toString(current.getYear()));
                 }
-                nums1.add(current.getPatientNum());
-                continue;
             } else if (current.getDisease().equals("间日疟")) {
-                year2.add(current.getYear());
-                if (!sex2.contains(current.getSex())){
-                    sex2.add(current.getSex());
+                diseaseC2.add(current);
+                if (!yearListC2.contains(Integer.toString(current.getYear()))) {
+                    yearListC2.add(Integer.toString(current.getYear()));
                 }
-                nums2.add(current.getPatientNum());
             }
         }
-        Iterator<Integer> ite = year1.iterator();
-        List<String> year1List = new ArrayList<>();
-        while(ite.hasNext()){
-            year1List.add(ite.next().toString());
+        List<String> sexList = new ArrayList<>();
+        sexList.add("男");
+        sexList.add("女");
+
+        List<Integer> valueListC1 = new ArrayList<>();
+        for (int i = 0; i < yearListC1.size(); i++) {
+            valueListC1.add(i * sexList.size(), 0);
+            valueListC1.add(i * sexList.size() + 1, 0);
+            for (int j = 0; j < diseaseC1.size(); j++) {
+                SexAnalyzeRe current = diseaseC1.get(j);
+                if (yearListC1.get(i).equals(Integer.toString(current.getYear()))) {
+                    if (current.getSex().equals(sexList.get(0))) {
+                        valueListC1.set(i * sexList.size(), current.getPatientNum());
+                    }
+                    if (current.getSex().equals(sexList.get(1))) {
+                        valueListC1.set(i * sexList.size() + 1, current.getPatientNum());
+                    }
+                }
+            }
         }
+        SexChart sexChartC1 = new SexChart();
+        sexChartC1.setDisease("恶性疟");
+        sexChartC1.setSexList(sexList);
+        sexChartC1.setYearList(yearListC1);
+        sexChartC1.setValuesList(valueListC1);
+
+        List<Integer> valueListC2 = new ArrayList<>();
+        for (int i = 0; i < yearListC2.size(); i++) {
+            valueListC2.add(i * sexList.size(), 0);
+            valueListC2.add(i * sexList.size() + 1, 0);
+            for (int j = 0; j < diseaseC2.size(); j++) {
+                SexAnalyzeRe current = diseaseC2.get(j);
+                if (yearListC2.get(i).equals(Integer.toString(current.getYear()))) {
+                    if (current.getSex().equals(sexList.get(0))) {
+                        valueListC2.set(i * sexList.size(), current.getPatientNum());
+                        continue;
+                    }
+                    if (current.getSex().equals(sexList.get(1))) {
+                        valueListC2.set(i * sexList.size() + 1, current.getPatientNum());
+                    }
+                }
+            }
+        }
+        SexChart sexChartC2 = new SexChart();
+        sexChartC2.setDisease("间日疟");
+        sexChartC2.setSexList(sexList);
+        sexChartC2.setYearList(yearListC2);
+        sexChartC2.setValuesList(valueListC2);
+
         List<SexChart> sexChartList = new ArrayList<>();
-        SexChart sexChart1 = new SexChart();
-        sexChart1.setDisease("恶性疟");
-        sexChart1.setYearList(year1List);
-        sexChart1.setSexList(sex1);
-        sexChart1.setValuesList(nums1);
-        sexChartList.add(sexChart1);
-        Iterator<Integer> ite2 = year2.iterator();
-        List<String> year2List = new ArrayList<>();
-        while(ite2.hasNext()){
-            year2List.add(ite2.next().toString());
-        }
-        SexChart sexChart2 = new SexChart();
-        sexChart2.setDisease("间日疟");
-        sexChart2.setYearList(year2List);
-        sexChart2.setSexList(sex2);
-        sexChart2.setValuesList(nums2);
-        sexChartList.add(sexChart2);
+        sexChartList.add(0, sexChartC1);
+        sexChartList.add(1, sexChartC2);
         return sexChartList;
     }
 
