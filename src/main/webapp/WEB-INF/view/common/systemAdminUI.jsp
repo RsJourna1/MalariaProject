@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: 郑晓辉
-  Date: 2016/11/9
-  Time: 22:08
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 
@@ -19,7 +12,7 @@
     <meta http-equiv="refresh" content="0;ie.html"/>
     <![endif]-->
     <link rel="shortcut icon" href="${webRoot}/images/malaria.ico"/>
-    <link href="${webRoot}/css/navStyle.css" rel="stylesheet" type="text/css" />
+    <link href="${webRoot}/css/navStyle.css" rel="stylesheet" type="text/css"/>
     <link href="${webRoot}/css/bootstrap.min.css" rel="stylesheet">
     <link href="${webRoot}/css/font-awesome.min.css" rel="stylesheet">
     <link href="${webRoot}/css/animate.css" rel="stylesheet">
@@ -98,17 +91,36 @@
         </div>
         <div class="sidebar-collapse">
             <ul class="nav" id="side-menu">
+                <li>
+                    <a class="J_menuItem" href="/user/showCheckUser">
+                        <i class="fa fa-check-square"></i>
+                        <span class="nav-label">审核页面</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="J_menuItem" href="/UploadFile/uploadView">
+                        <i class="fa fa-cloud-upload"></i>
+                        <span class="nav-label">数据导入</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a class="J_menuItem" href="/DownloadDBData/downloadView">
+                        <i class="fa fa-download"></i>
+                        <span class="nav-label">数据下载</span>
+                    </a>
+                </li>
 
                 <li>
                     <a href="#">
                         <i class="fa fa fa-fire"></i>
-                        <span class="nav-label">爆发与分析</span>
+                        <span class="nav-label">爆发分析</span>
                         <span class="fa arrow"></span>
                     </a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="hotMap.jsp" class="J_menuItem">热力图</a>
-                            <a href="hotMap.jsp" class="J_menuItem">动态迁移</a>
+                            <a href="/UndonePage/hotMapDemo" class="J_menuItem">热力图</a>
+                            <a href="/UndonePage/hotMapDemo" class="J_menuItem">动态迁移</a>
                         </li>
                     </ul>
                 </li>
@@ -144,7 +156,6 @@
                         <span class="nav-label">执行计算</span>
                     </a>
                 </li>
-
 
                 <li>
                     <a class="J_menuItem" href="/UndonePage/developing">
@@ -185,10 +196,12 @@
                     </li>
                 </ul>
             </div>
-            <a href="login.jsp" class="roll-nav roll-right J_tabExit"><i class="fa fa fa-sign-out"></i>登录</a>
+            <a href="http://localhost:8080/UserUI.jsp" class="roll-nav roll-right J_tabExit"><i
+                    class="fa fa fa-sign-out"></i> 退出</a>
         </div>
         <div class="row J_mainContent" id="content-main">
-            <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="first-page.jsp" frameborder="0"
+            <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="../../../first-page.jsp"
+                    frameborder="0"
                     data-id="first-page.jsp" seamless></iframe>
         </div>
         <!--<div class="footer">-->
@@ -207,7 +220,7 @@
 
 <!-- 自定义js -->
 <script src="${webRoot}/js/hplus.js"></script>
-<script type="text/javascript" src="${webRoot}/js/contabs.js"></script>
+<script src="${webRoot}/js/contabs.js" type="text/javascript"></script>
 
 <!-- 第三方插件 -->
 <script src="${webRoot}/js/pace.min.js"></script>

@@ -61,21 +61,23 @@ public class AnalyzeMapperTest {
 
     @Test
     public void analyzeByCareer() throws Exception {
-        AnalyzeVo analyzeVo = new AnalyzeVo();
-        analyzeVo.setBeginYear(2005);
-//        analyzeVo.setEndYear(2011);
-        analyzeVo.setProvince("云南");
-        List<CareerAnalyzeRe> careerAnalyzeReList = null;
-        Map<String, List<CareerAnalyzeRe>> careerResultMap = new HashMap<>();
-        //此处已经去掉“不详”的职业类别数据
-        Set<String> diseaseNames = analyzeMapper.selectDisease();
-        for (String s : diseaseNames) {
-            analyzeVo.setDiseaseName(s);
-            careerAnalyzeReList = analyzeMapper.analyzeByCareer(analyzeVo);
-            careerResultMap.put(s, careerAnalyzeReList);
-        }
-        System.out.println(careerResultMap.get("恶性疟"));
-        System.out.println("===Over===");
+        String dataSource = "杭州";
+        System.out.println(analyzeMapper.analyzeByCareer(dataSource).get(0).getDisease());
+//        AnalyzeVo analyzeVo = new AnalyzeVo();
+//        analyzeVo.setBeginYear(2005);
+////        analyzeVo.setEndYear(2011);
+//        analyzeVo.setProvince("云南");
+//        List<CareerAnalyzeRe> careerAnalyzeReList = null;
+//        Map<String, List<CareerAnalyzeRe>> careerResultMap = new HashMap<>();
+//        //此处已经去掉“不详”的职业类别数据
+//        Set<String> diseaseNames = analyzeMapper.selectDisease();
+//        for (String s : diseaseNames) {
+//            analyzeVo.setDiseaseName(s);
+//            careerAnalyzeReList = analyzeMapper.analyzeByCareer(analyzeVo);
+//            careerResultMap.put(s, careerAnalyzeReList);
+//        }
+//        System.out.println(careerResultMap.get("恶性疟"));
+//        System.out.println("===Over===");
     }
 
     @Test

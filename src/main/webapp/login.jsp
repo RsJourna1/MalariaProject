@@ -51,13 +51,14 @@
             </div>
         </div>
         <div class="col-sm-5">
-            <form method="post" action="index.html">
+            <form method="post" action="/user/login">
                 <h4 class="no-margins">登录：</h4>
-                <input type="text" class="form-control uname" placeholder="用户名" />
-                <input type="password" class="form-control pword m-b" placeholder="密码" />
+                <input name="useremail" type="text" class="form-control uname" placeholder="用户名" />
+                <input name="userpassword" type="password" class="form-control pword m-b" placeholder="密码" />
                 <strong><a href="">忘记密码&nbsp;&nbsp;&nbsp;</a></strong>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>还没有账号？ <a href="register.jsp">立即注册&raquo;</a></strong>
-                <a href="/user/login"><button type="button" class="btn btn-success btn-block">登录</button></a>
+                <button type="submit" class="btn btn-success btn-block">登录</button>
+                <%--<a href="/user/login"><button type="button" class="btn btn-success btn-block">登录</button></a>--%>
             </form>
         </div>
     </div>

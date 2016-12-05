@@ -32,7 +32,7 @@
             <div>
                 <h4 style="font-weight: 300">&nbsp;&nbsp;数据来源（地区）:</h4>
                 <select id="dataSource" class="form-control">
-                    <option value="中国" selected>中国</option>
+                    <option value="default" selected>默认</option>
                 </select>
             </div>
             <%--<div>--%>
@@ -78,26 +78,26 @@
                     <div id="tab-1" class="tab-pane fade in active" role="tabpanel">
                         <div class="panel-body">
                             <div class="col-sm-12">
-                                <div id="sexChartTab_1" style="height:400px"></div>
+                                <div id="sexChartTab_1" style="height:250px"></div>
                             </div>
                             <div class="col-sm-12">
-                                <div id="ageChartTab_1" style="height:400px"></div>
+                                <div id="ageChartTab_1" style="height:250px"></div>
                             </div>
                             <div class="col-sm-12">
-                                <div id="careerChartTab_1" style="height:400px"></div>
+                                <div id="careerChartTab_1" style="height:250px"></div>
                             </div>
                         </div>
                     </div>
                     <div id="tab-2" class="tab-pane fade active" role="tabpanel">
                         <div class="panel-body">
                             <div class="col-sm-12">
-                                <div id="sexChartTab_2" style="height:400px"></div>
+                                <div id="sexChartTab_2" style="height:250px"></div>
                             </div>
                             <div class="col-sm-12">
-                                <div id="ageChartTab_2" style="height:400px"></div>
+                                <div id="ageChartTab_2" style="height:250px"></div>
                             </div>
                             <div class="col-sm-12">
-                                <div id="careerChartTab_2" style="height:400px"></div>
+                                <div id="careerChartTab_2" style="height:250px"></div>
                             </div>
                         </div>
                     </div>
@@ -150,7 +150,7 @@
                 var initOption = initSexChartOption();
                 //初始化时加载
                 $(function () {
-                    var dataSource = '中国';
+                    var dataSource = $('#dataSource').val();
                     sexAjaxFunction(dataSource, sexChartTab_1, sexChartTab_2);
                 });
                 $('#searchBtn').on('click', function () {

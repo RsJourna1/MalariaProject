@@ -6,8 +6,8 @@
     <display-name>SSM Web Application</display-name>
 
     <welcome-file-list>
-        <welcome-file>analyzeSexChart.jsp</welcome-file>
-        <!--<welcome-file>UserUI.jsp</welcome-file>-->
+        <!--<welcome-file>analyzeSexChart.jsp</welcome-file>-->
+        <welcome-file>UserUI.jsp</welcome-file>
         <!--<welcome-file>AdminUI.jsp</welcome-file>-->
     </welcome-file-list>
 

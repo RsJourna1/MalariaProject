@@ -25,7 +25,7 @@ public class AnalyzeByChartsController {
 
     @RequestMapping("analyzeView")
     public String analyzeView() throws Exception {
-        return "common/charts";
+        return "../../analyzeSexChart";
     }
 
     /*性别比例分析*/
@@ -37,12 +37,13 @@ public class AnalyzeByChartsController {
         return analyzeService.analyzeBySex(dataSource);
     }
 
-    @RequestMapping("/careerChart")
+    /*职业比例分析*/
+    @RequestMapping(value = "/careerChart", method = RequestMethod.POST)
     public
     @ResponseBody
-    Map<String, List<CareerAnalyzeRe>> careerChart(AnalyzeVo analyzeVo) throws Exception {
-        System.out.println(analyzeService.analyzeByCareer(analyzeVo));
-        return analyzeService.analyzeByCareer(analyzeVo);
+    List<CareerChart> careerChart(String dataSource) throws Exception {
+        System.out.println(dataSource);
+        return analyzeService.analyzeByCareer(dataSource);
     }
 
     @RequestMapping("/ageGroupChart")

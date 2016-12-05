@@ -96,17 +96,32 @@ public class AnalyzeServiceImpl implements AnalyzeService {
     }
 
     @Override
-    public Map<String, List<CareerAnalyzeRe>> analyzeByCareer(AnalyzeVo analyzeVo) throws Exception {
-        List<CareerAnalyzeRe> careerAnalyzeReList = null;
-        Map<String, List<CareerAnalyzeRe>> careerResultMap = new HashMap<>();
-        //此处已经去掉“不详”的职业类别数据
-        Set<String> diseaseNames = analyzeMapper.selectDisease();
-        for (String s : diseaseNames) {
-            analyzeVo.setDiseaseName(s);
-            careerAnalyzeReList = analyzeMapper.analyzeByCareer(analyzeVo);
-            careerResultMap.put(s, careerAnalyzeReList);
+    public List<CareerChart> analyzeByCareer(String dataSource) throws Exception {
+        List<CareerAnalyzeRe> careerAnalyzeReList = analyzeMapper.analyzeByCareer(dataSource);
+        if (0 >= careerAnalyzeReList.size()) {
+            return null;
         }
-        return careerResultMap;
+        List<CareerChart> careerChartList = new ArrayList<>();
+        List<CareerAnalyzeRe> diseaseC1 = new ArrayList<>();
+        List<CareerAnalyzeRe> diseaseC2 = new ArrayList<>();
+        List<String> yearListC1 = new ArrayList<>();
+        List<String> yearListC2 = new ArrayList<>();
+        for (int i = 0; i < careerAnalyzeReList.size(); i++) {
+            CareerAnalyzeRe current = careerAnalyzeReList.get(i);
+            if ("恶性疟".equals(current.getDisease().trim())) {
+                diseaseC1.add(current);
+                if (!yearListC1.contains(Integer.toString(current.getYear()))) {
+                    yearListC1.add(Integer.toString(current.getYear()));
+                }
+            }
+            if ("间日疟".equals(current.getDisease().trim())) {
+                diseaseC2.add(current);
+                if (!yearListC2.contains(Integer.toString(current.getYear()))) {
+                    yearListC2.add(Integer.toString(current.getYear()));
+                }
+            }
+        }
+        return careerChartList;
     }
 
     @Override
@@ -146,3 +161,14 @@ public class AnalyzeServiceImpl implements AnalyzeService {
 //            sexChartData.add(index,sexViewKeyMap);
 //        }
 //        return sexChartData;
+
+
+//        Map<String, List<CareerAnalyzeRe>> careerResultMap = new HashMap<>();
+//        //此处已经去掉“不详”的职业类别数据
+//        Set<String> diseaseNames = analyzeMapper.selectDisease();
+//        for (String s : diseaseNames) {
+//            analyzeVo.setDiseaseName(s);
+////            careerAnalyzeReList = analyzeMapper.analyzeByCareer(analyzeVo);
+////            careerResultMap.put(s, careerAnalyzeReList);
+//        }
+//        return careerResultMap;

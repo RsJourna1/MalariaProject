@@ -11,7 +11,7 @@ import java.util.Map;
 public interface AnalyzeService {
     List<SexChart> analyzeBySex(String dataSource) throws Exception;
 
-    Map<String, List<CareerAnalyzeRe>> analyzeByCareer(AnalyzeVo analyzeVo) throws Exception;
+    List<CareerChart> analyzeByCareer(String dataSource) throws Exception;
 
     AgeGroupAnalyzeRe analyzeByAgeGroup(AnalyzeVo analyzeVo) throws Exception;
 }
