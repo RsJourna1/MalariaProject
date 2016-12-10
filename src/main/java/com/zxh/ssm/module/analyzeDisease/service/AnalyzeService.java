@@ -13,5 +13,5 @@ public interface AnalyzeService {
 
     List<CareerChart> analyzeByCareer(String dataSource) throws Exception;
 
-    AgeGroupAnalyzeRe analyzeByAgeGroup(AnalyzeVo analyzeVo) throws Exception;
+    List<AgeGroupChart> analyzeByAgeGroup(String dataSource) throws Exception;
 }

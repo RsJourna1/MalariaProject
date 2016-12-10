@@ -3,8 +3,8 @@ package com.zxh.ssm.module.login.controller;
 
 import com.zxh.ssm.module.whole.pojo.User;
 import com.zxh.ssm.module.login.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -22,6 +22,28 @@ public class UserController {
     @Resource
     private UserService userService;
 
+    @RequestMapping(value = "/exitToUserUI")
+    public String exitToUserUI() throws Exception {
+        return "common/exitedTip";
+    }
+
+    @RequestMapping(value = "/loginView", method = RequestMethod.GET)
+    public String loginView(String errorMessage,String userCount) throws Exception {
+        System.out.println(errorMessage);
+        System.out.println(userCount);
+        return "common/login";
+    }
+
+    @RequestMapping(value = "/registerView", method = RequestMethod.GET)
+    public String registerView() throws Exception {
+        return "common/register";
+    }
+
+    @RequestMapping(value = "/{authorizationStatus}")
+    public String getAdminView(@PathVariable("authorizationStatus") int authorizationStatus) throws Exception {
+        return "common/AdminUI";
+    }
+
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public ModelAndView userLogin(User user) throws Exception {
         User userChecked = userService.checkLogin(user.getUseremail(), user.getUserpassword());
@@ -38,7 +60,11 @@ public class UserController {
             }
             return modelAndView;
         } else {
-            modelAndView.setViewName("error/404");
+            modelAndView.addObject("errorMessage", "用户名或密码错误");
+            if (null != user.getUseremail() && !"".equals(user.getUseremail())) {
+                modelAndView.addObject("userCount", user.getUseremail());
+            }
+            modelAndView.setViewName("redirect:/user/loginView");
             return modelAndView;
         }
     }
@@ -49,7 +75,7 @@ public class UserController {
         ModelAndView modelAndView = new ModelAndView();
         if (registerType) {
             userService.saveRegister(user);
-            modelAndView.setViewName("../../login");
+            modelAndView.setViewName("common/login");
         }
         return modelAndView;
     }

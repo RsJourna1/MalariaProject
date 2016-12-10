@@ -11,8 +11,9 @@
     <title>Undone</title>
 </head>
 <body>
-    <div align="center">
-        <h2>程序猿还在开发中。。。</h2>
+    <div align="center" style="top: 45%">
+        <h1>Loading...</h1>
+        <h2>开发团队还在开发中,敬请期待!</h2>
     </div>
 </body>
 </html>

@@ -1,5 +1,6 @@
 package com.zxh.ssm.module.analyzeDisease.mapper;
 
+import com.zxh.ssm.module.analyzeDisease.pojo.AgeGroupAnalyzeRe;
 import com.zxh.ssm.module.analyzeDisease.pojo.CareerAnalyzeRe;
 import com.zxh.ssm.module.analyzeDisease.pojo.AnalyzeVo;
 import com.zxh.ssm.module.analyzeDisease.pojo.SexAnalyzeRe;
@@ -18,5 +19,5 @@ public interface AnalyzeMapper {
 
     List<CareerAnalyzeRe> analyzeByCareer(String dataSource)throws Exception;
 
-    int analyzeByAgeGroup(AnalyzeVo analyzeVo)throws Exception;
+    List<AgeGroupAnalyzeRe> analyzeByAgeGroup(String dataSource)throws Exception;
 }

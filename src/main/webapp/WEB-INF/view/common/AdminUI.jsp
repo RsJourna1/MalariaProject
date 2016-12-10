@@ -135,12 +135,12 @@
                     </a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="/UndonePage/developing" class="J_menuItem">1</a>
-                            <a href="/UndonePage/developing" class="J_menuItem">2</a>
-                            <a href="/UndonePage/developing" class="J_menuItem">3</a>
-                            <a href="/UndonePage/developing" class="J_menuItem">4</a>
-                            <a href="/UndonePage/developing" class="J_menuItem">5</a>
-                            <a href="/UndonePage/developing" class="J_menuItem">6</a>
+                            <%--<a href="/UndonePage/developing" class="J_menuItem">1</a>--%>
+                            <%--<a href="/UndonePage/developing" class="J_menuItem">2</a>--%>
+                            <%--<a href="/UndonePage/developing" class="J_menuItem">3</a>--%>
+                            <%--<a href="/UndonePage/developing" class="J_menuItem">4</a>--%>
+                            <%--<a href="/UndonePage/developing" class="J_menuItem">5</a>--%>
+                            <%--<a href="/UndonePage/developing" class="J_menuItem">6</a>--%>
                         </li>
                     </ul>
                 </li>
@@ -191,7 +191,7 @@
                     </li>
                 </ul>
             </div>
-            <a href="http://localhost:8080/UserUI.jsp" class="roll-nav roll-right J_tabExit"><i class="fa fa fa-sign-out"></i> 退出</a>
+            <a href="/user/exitToUserUI" class="roll-nav roll-right J_tabExit"><i class="fa fa fa-sign-out"></i> 退出</a>
         </div>
         <div class="row J_mainContent" id="content-main">
             <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="../../../first-page.jsp" frameborder="0"

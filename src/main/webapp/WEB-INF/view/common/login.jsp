@@ -22,12 +22,12 @@
     <link href="${webRoot}/css/style.css" rel="stylesheet">
     <link href="${webRoot}/css/plugins/login/login.css" rel="stylesheet">
     <!--[if lt IE 9]>
-    <meta http-equiv="refresh" content="0;ie.html" />
+    <meta http-equiv="refresh" content="0;ie.html"/>
     <![endif]-->
     <style type="text/css">
-        .btn-success{
-            background-color:#39A7DA;
-            border-color:#39A7DA;
+        .btn-success {
+            background-color: #39A7DA;
+            border-color: #39A7DA;
         }
     </style>
     <script>
@@ -53,12 +53,32 @@
         <div class="col-sm-5">
             <form method="post" action="/user/login">
                 <h4 class="no-margins">登录：</h4>
-                <input name="useremail" type="text" class="form-control uname" placeholder="用户名" />
-                <input name="userpassword" type="password" class="form-control pword m-b" placeholder="密码" />
+                <%
+                    if (null == request.getParameter("userCount")) {
+                %>
+                <input name="useremail" type="text" class="form-control uname" placeholder="用户名"/>
+                <%
+                    } else {
+                %>
+                <input name="useremail" type="text" class="form-control uname"
+                       value="<%=request.getParameter("userCount")%>"/>
+                <%
+                    }
+                %>
+
+                <input name="userpassword" type="password" class="form-control pword m-b" placeholder="密码"/>
+                <%
+                    if (null != request.getParameter("errorMessage")) {
+                %>
+                <div style="font-size: 12px;color: #a82929;" align="right">
+                    <%=new String(request.getParameter("errorMessage").getBytes("iso-8859-1"), "utf-8")%>
+                </div>
+                <%
+                    }
+                %>
                 <strong><a href="">忘记密码&nbsp;&nbsp;&nbsp;</a></strong>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>还没有账号？ <a href="register.jsp">立即注册&raquo;</a></strong>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>还没有账号？ <a href="/user/registerView">立即注册&raquo;</a></strong>
                 <button type="submit" class="btn btn-success btn-block">登录</button>
-                <%--<a href="/user/login"><button type="button" class="btn btn-success btn-block">登录</button></a>--%>
             </form>
         </div>
     </div>

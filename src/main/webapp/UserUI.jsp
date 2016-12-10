@@ -102,13 +102,13 @@
                 <li>
                     <a href="#">
                         <i class="fa fa fa-fire"></i>
-                        <span class="nav-label">爆发与分析</span>
+                        <span class="nav-label">爆发分析</span>
                         <span class="fa arrow"></span>
                     </a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="hotMap.jsp" class="J_menuItem">热力图</a>
-                            <a href="hotMap.jsp" class="J_menuItem">动态迁移</a>
+                            <a href="/UndonePage/hotMapDemo" class="J_menuItem">热力图</a>
+                            <a href="/UndonePage/hotMapDemo" class="J_menuItem">动态迁移</a>
                         </li>
                     </ul>
                 </li>
@@ -128,12 +128,12 @@
                     </a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="/UndonePage/developing" class="J_menuItem">1</a>
-                            <a href="/UndonePage/developing" class="J_menuItem">2</a>
-                            <a href="/UndonePage/developing" class="J_menuItem">3</a>
-                            <a href="/UndonePage/developing" class="J_menuItem">4</a>
-                            <a href="/UndonePage/developing" class="J_menuItem">5</a>
-                            <a href="/UndonePage/developing" class="J_menuItem">6</a>
+                            <%--<a href="/UndonePage/developing" class="J_menuItem">1</a>--%>
+                            <%--<a href="/UndonePage/developing" class="J_menuItem">2</a>--%>
+                            <%--<a href="/UndonePage/developing" class="J_menuItem">3</a>--%>
+                            <%--<a href="/UndonePage/developing" class="J_menuItem">4</a>--%>
+                            <%--<a href="/UndonePage/developing" class="J_menuItem">5</a>--%>
+                            <%--<a href="/UndonePage/developing" class="J_menuItem">6</a>--%>
                         </li>
                     </ul>
                 </li>
@@ -185,7 +185,7 @@
                     </li>
                 </ul>
             </div>
-            <a href="login.jsp" class="roll-nav roll-right J_tabExit"><i class="fa fa fa-sign-out"></i>登录</a>
+           <a href="/user/loginView" class="roll-nav roll-right J_tabExit"><i class="fa fa fa-sign-in"></i>登录</a>
         </div>
         <div class="row J_mainContent" id="content-main">
             <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="first-page.jsp" frameborder="0"

@@ -5,10 +5,10 @@ import java.util.List;
 /**
  * Created by 郑晓辉 on 2016/12/5.
  */
-public class CareerChart {
+public class AgeGroupChart {
     private String disease;
     private List<String> yearList;
-    private List<List> careerList;
+    private List<List> ageGroupList;
     private List<List> valuesList;
 
     public String getDisease() {
@@ -27,12 +27,12 @@ public class CareerChart {
         this.yearList = yearList;
     }
 
-    public List<List> getCareerList() {
-        return careerList;
+    public List<List> getAgeGroupList() {
+        return ageGroupList;
     }
 
-    public void setCareerList(List<List> careerList) {
-        this.careerList = careerList;
+    public void setAgeGroupList(List<List> ageGroupList) {
+        this.ageGroupList = ageGroupList;
     }
 
     public List<List> getValuesList() {

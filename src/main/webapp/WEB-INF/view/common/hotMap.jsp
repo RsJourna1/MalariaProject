@@ -14,7 +14,7 @@
             src="http://api.map.baidu.com/api?v=2.0&ak=fKhoym1WRjv6As8wpebyVtndCGnDWZuU"></script>
     <!--<script type="text/javascript" src="http://api.map.baidu.com/library/Heatmap/2.0/src/Heatmap_min.js"></script>-->
     <script type="text/javascript" src="${webRoot}/js/plugins/baiduApi/Heatmap_min.js"></script>
-    <script type="text/javascript" src="${webRoot}/js/jQuery-core/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="${webRoot}/js/jquery.min.js"></script>
     <title>热力图功能</title>
     <style type="text/css">
         ul, li {

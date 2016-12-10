@@ -46,10 +46,11 @@ public class AnalyzeByChartsController {
         return analyzeService.analyzeByCareer(dataSource);
     }
 
-    @RequestMapping("/ageGroupChart")
+    @RequestMapping(value = "/ageGroupChart", method = RequestMethod.POST)
     public
     @ResponseBody
-    AgeGroupAnalyzeRe ageGroupChart(AnalyzeVo analyzeVo) throws Exception {
-        return analyzeService.analyzeByAgeGroup(analyzeVo);
+    List<AgeGroupChart> ageGroupChart(String dataSource) throws Exception {
+        System.out.println(dataSource);
+        return analyzeService.analyzeByAgeGroup(dataSource);
     }
 }
